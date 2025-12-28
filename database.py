@@ -64,8 +64,9 @@ class Database:
                 INSERT INTO food_entries (food_name, calories, protein, timestamp)
                 VALUES (?, ?, ?, ?)
             ''', (food_name, calories, protein, timestamp))
+            entry_id = cursor.lastrowid
         
-        return cursor.lastrowid
+        return entry_id
     
     def get_all_entries(self):
         """Retrieve all food entries from the database."""

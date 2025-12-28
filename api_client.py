@@ -10,10 +10,12 @@ class FoodAPIClient:
     
     def __init__(self):
         """Initialize the API client."""
+        # Retrieve API key from environment for future real API integration
         self.api_key = os.environ.get('NUTRITION_API_KEY')
         
         # For now, we'll use a mock implementation since the actual API
         # integration requires authentication details not provided
+        # Set use_mock to False once API credentials are configured
         self.use_mock = True
     
     def search_food(self, food_name):
